@@ -79,7 +79,7 @@ int main()
     cudaMemcpy(d_A,h_A,width,cudaMemcpyHostToDevice);
     cudaMemcpy(d_B,h_B,width,cudaMemcpyHostToDevice);
 
-    dim3 blockSize(width*width, width*width);
+    dim3 blockSize(width, width);
     dim3 gridSize(1);
 
     multiply_matrix<<<gridSize,blockSize>>>(d_A,d_B,d_C,width);
